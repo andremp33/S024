@@ -6,31 +6,31 @@
 #include <stdbool.h>
 
 
-#define MAX_QUEUE_SIZE 100
+#define MAX_QUEUE_SIZE 50
 
 
 typedef struct {
- int id;
- int time;
  char command[10];
  char program[100];
  char flag[3];
- pid_t pid;
  bool occupation;
+ int id;
+ int time;
 } Task;
 
 
-void scheduler_init();
-int scheduler_add_task(Task task);
-void scheduler_remove_task(Task task);
-Task scheduler_get_task();
-void scheduler_delete_queue();
-bool scheduler_empty_queue();
-int scheduler_get_next_task_id();
-Task* scheduler_get_scheduled_tasks();
-int scheduler_get_scheduled_tasks_num();
+void schedule_init();
+int schedule_add_task(Task task);
+void schedule_remove_task(Task task);
+bool schedule_empty_queue();
+int schedule_get_next_task_id();
+Task* schedule_get_scheduled_tasks();
+int schedule_get_scheduled_tasks_num();
+Task schedule_get_task();
+void schedule_delete_queue();
 
 
-#endif
+
+#endif // TASK_H
 
 

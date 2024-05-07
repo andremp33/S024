@@ -1,5 +1,5 @@
-#ifndef CLIENT.H
-#define CLIENT.H
+#ifndef CLIENT_H
+#define CLIENT_H
 #include <unistd.h>
 
 #endif

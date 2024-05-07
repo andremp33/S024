@@ -1,11 +1,11 @@
-#ifndef ENGINE_H
-#define ENGINE_H
+#ifndef PROCESSOR_H
+#define PROCESSOR_H
 
 
 #include "../include/task.h"
 
 
-void engine_execute_task(Task task, const char *outputPath, int logFile_fd);
-
+Task processortaskexecuter (Task task, int logFile_fd);
+Task processorpipelinerexecuter (Task task, int logFile_fd);
 
 #endif
