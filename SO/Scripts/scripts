@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+# Este script envia várias tarefas para o servidor, uma a uma.
+# Cada tarefa é enviada independentemente para testar o desempenho do servidor.
+# O operador & executa cada comando em segundo plano.
+
+
+cd ../bin
+
+
+# Disparar várias tarefas para o servidor
+./client execute 2 -u "ls -lh" & # lista arquivos com tamanhos humanamente legíveis
+sleep 0.5
+
+
+./client execute 12 -u "../Magic_Problem/magic_problem 12" & # executa programa customizado random_gen com 12s de atraso
+sleep 0.5
+
+
+./client execute 8 -u "find . -type f" & # busca por todos os arquivos recursivamente
+sleep 0.5
+
+
+./client execute 4 -u "uname -r" & # exibe apenas a versão do kernel
+sleep 0.5
+
+
+./client execute 15 -p "cat ../src/processor.c | grep -i 'task' | sort"
+
+
+# Aguarda para que as tarefas sejam processadas pelo servidor
+sleep 25
+
+
+./client status &
