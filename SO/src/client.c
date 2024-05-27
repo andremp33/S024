@@ -153,7 +153,7 @@ int main(int argc, char* argv[]) {
 
 
     }
-    else if(strcmp(argv[1],"help") == 0){
+   /* else if(strcmp(argv[1],"help") == 0){
         strcpy(tarefa.command,argv[1]);
 
 
@@ -184,7 +184,7 @@ int main(int argc, char* argv[]) {
         }
 
 
-    }
+    }*/
     return 0;
 }
 
